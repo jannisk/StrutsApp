@@ -10,19 +10,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+       
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>L o g i n  F o r m</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+       <h1>Hello World!</h1>
+      <div id="logo">
+        <img src="_img/logo.jpg" border="0">
+    </div>
         <html:form action="/login">
             <table border="0">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
                 <tbody>
                     <tr>
                         <td>Enter your name:</td>
@@ -34,11 +33,10 @@
                     </tr>
                     <tr>
                         <td></td>
-                         <html:submit value="Login" />
+                        <td><html:submit value="Login" /></td>
                     </tr>
                 </tbody>
             </table>
-
         </html:form>
     </body>
 </html>

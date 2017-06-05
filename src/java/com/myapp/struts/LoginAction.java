@@ -48,7 +48,7 @@ public class LoginAction extends org.apache.struts.action.Action {
                 name.equals("")
                 || // name parameter is empty
                 email.indexOf("@") == -1) {   // email lacks '@'
-
+             formBean.setError("Login error");
             return mapping.findForward(FAILURE);
         }
 

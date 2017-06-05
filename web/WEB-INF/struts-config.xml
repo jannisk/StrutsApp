@@ -9,6 +9,7 @@
     <form-beans>
         <form-bean name="LoginForm" type="com.myapp.struts.LoginForm"/>
     
+        
     </form-beans>
     
     <global-exceptions>
@@ -16,12 +17,14 @@
     </global-exceptions>
 
     <global-forwards>
-        <forward name="welcome"  path="/Welcome.do"/>
+        <forward name="login"  path="/login.do"/>
     </global-forwards>
 
     <action-mappings>
-        <action name="LoginForm" path="/login" scope="request" type="com.myapp.struts.LoginAction" validate="false"/>
-        <action path="/login" type="com.myapp.struts.LoginAction"/>
+        <action name="LoginForm" input="/login.jsp" path="/login" scope="request" type="com.myapp.struts.LoginAction" validate="false">
+            <forward name="success" path="/WEB-INF/success.jsp"/>
+            <forward name="failure" path="/login.jsp"/>
+        </action>
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
     </action-mappings>
     

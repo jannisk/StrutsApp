@@ -19,7 +19,18 @@ public class LoginForm extends org.apache.struts.action.ActionForm {
     
     private String name;
     private String email;
+    // error message
+    private String error;
 
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+         this.error = "<span style='color:red'>Please provide valid entries for both fields</span>";
+    }
+    
+    
     public String getEmail() {
         return email;
     }

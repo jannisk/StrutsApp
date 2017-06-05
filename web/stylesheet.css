@@ -1,0 +1,90 @@
+html {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+div#container {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    z-index: 3;
+    padding-bottom: 100px;
+    word-wrap: break-word;
+}
+div#header-wrap {
+    background: url( "../../_img/ghb/background_body_ghb.gif" ) repeat-x top left white;
+
+    margin: 0;
+    display: block;
+    width: 100%;
+    height: 127px;
+    font-size: 4em;
+    z-index: 5;
+    
+
+}
+body {
+   font-family: Verdana, Arial, sans-serif;
+   font-size: smaller;
+   padding: 50px;
+   color: #555;
+   width: 650px;
+}
+
+h1 {
+   letter-spacing: 6px;
+   font-size: 1.6em;
+   color: #be7429;
+   font-weight: bold;
+}
+
+h2 {
+   text-align: left;
+   letter-spacing: 6px;
+   font-size: 1.4em;
+   color: #be7429;
+   font-weight: normal;
+   width: 450px;
+}
+
+table {
+   width: 550px;
+   padding: 10px;
+   background-color: #c5e7e0;
+  font-family: sans-serif;
+}
+
+td {
+   padding: 10px;
+}
+
+a {
+  color: #be7429;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.popupBox {
+  position: absolute;
+  top: 170px;
+  left: 140px;
+}
+
+.popupCell {
+   background-color: #fffafa;
+}
+
+.popupCell:hover {
+  background-color: #f5ebe9;
+}
+
+.popupItem {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2em;
+}
