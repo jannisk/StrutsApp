@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%-- 
     Document   : success
     Created on : Jun 1, 2017, 11:14:36 PM
@@ -19,6 +21,27 @@
 
         <p>Your name is: <bean:write name="LoginForm" property="name" />.</p>
 
-        <p>Your email address is: <bean:write name="LoginForm" property="email" />.</p>
-</body>
+        <p>Your email address is: <bean:write name="LoginForm" property="email" />.
+
+        </p><sql:query var="Artists" dataSource="jdbc/C">
+            SELECT  maindj.oc_meal_name FROM maindj.oc_meal
+        </sql:query>
+
+        <table border="1">
+            <!-- column headers -->
+            <tr>
+                <c:forEach var="columnName" items="${Artists.columnNames}">
+                    <th><c:out value="${columnName}"/></th>
+                    </c:forEach>
+            </tr>
+            <!-- column data -->
+            <c:forEach var="row" items="${Artists.rowsByIndex}">
+                <tr>
+                    <c:forEach var="column" items="${row}">
+                        <td><c:out value="${column}"/></td>
+                    </c:forEach>
+                </tr>
+            </c:forEach>
+        </table>
+    </body>
 </html>
