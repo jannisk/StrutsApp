@@ -14,9 +14,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
         <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.12.4.js"></script>
-        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script> 
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#example').DataTable();
+            });
+        </script>
     </head>
-   
+
     <body>
         <h1> Congratulations! </h1>
 
@@ -29,6 +35,8 @@
                 SELECT id, transactionType FROM examinations
             </sql:query>
 
+                <div class="dataTables_length" id="example_length"><label>Show <select name="example_length" aria-controls="example" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div>
+                
         <table id="example" class="display" cellspacing="0" width="100%" border="1" >
             <!-- column headers -->
             <tr>
@@ -46,11 +54,5 @@
             </c:forEach>
         </table>
     </body>
-     <script>
-        $(document).ready(function () {
-            $('#example').DataTable({
-                "lengthMenu": [ 10, 25, 50, 75, 100 ]
-            });
-        });
-    </script>
+
 </html>
