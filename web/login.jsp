@@ -11,7 +11,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
-       
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>L o g i n  F o r m</title>
     </head>
@@ -19,7 +19,7 @@
        <h1>Hello World!</h1>
       <div id="logo">
         <img src="_img/logo.jpg" border="0">
-    </div>
+      </div>
         <html:form action="/login">
             <table border="0">
                 <tbody>

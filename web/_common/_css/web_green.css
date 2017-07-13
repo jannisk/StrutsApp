@@ -2137,9 +2137,7 @@ div#loginopeninsurance #error_msg div{
  bottom:30px;
  left:-25px;
  display:inline-block;
- // width:100%;
  width:85px;
- text-align:left;
- // white-space:nowrap;
+ text-align:left
 }
 }

@@ -6,24 +6,31 @@
     Author     : jkotsis
 --%>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Login Success</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
-        <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.12.4.js"></script>
-        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script> 
-
+       <link href="../media/dataTables/demo_page.css" rel="stylesheet" type="text/css" />
+        <link href="../media/dataTables/demo_table.css" rel="stylesheet" type="text/css" />
+        <link href="../media/dataTables/demo_table_jui.css" rel="stylesheet" type="text/css" />
+        <link href="../media/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="../media/themes/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" media="all" />
+        <script src="../scripts/jquery.js" type="text/javascript"></script>
+        <script src="../scripts/jquery.dataTables.min.js" type="text/javascript"></script>
+       
         <script type="text/javascript">
             $(document).ready(function () {
-                $('#example').DataTable();
+                $("#Meals").dataTable()({
+                     "sPaginationType": "full_numbers",
+                     "bJQueryUI": true 
+                });
             });
         </script>
+ 
     </head>
 
-    <body>
+    <body id="dt_example">
         <h1> Congratulations! </h1>
 
         <p>You have successfully logged in.</p>
@@ -35,15 +42,27 @@
                 SELECT id, transactionType FROM examinations
             </sql:query>
 
-                <div class="dataTables_length" id="example_length"><label>Show <select name="example_length" aria-controls="example" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div>
-                
-        <table id="example" class="display" cellspacing="0" width="100%" border="1" >
+        <div class="dataTables_length" id="example_length">
+               <label>Show 
+                   <select name="example_length" aria-controls="example" class="">
+                       <option value="10">10</option>
+                       <option value="25">25</option>
+                       <option value="50">50</option>
+                       <option value="100">100</option>
+                   </select> entries</label>
+        </div>
+
+        <div id ="Meals_jui">
+        <table id="Meals" class="display" cellspacing="0" width="100%" border="1" >
+        
             <!-- column headers -->
             <tr>
                 <c:forEach var="columnName" items="${Meals.columnNames}">
                     <th><c:out value="${columnName}"/></th>
-                    </c:forEach>
+                </c:forEach>
             </tr>
+     
+            <tbody>
             <!-- column data -->
             <c:forEach var="row" items="${Meals.rowsByIndex}">
                 <tr>
@@ -51,8 +70,10 @@
                         <td><c:out value="${column}"/></td>
                     </c:forEach>
                 </tr>
-            </c:forEach>
+                </c:forEach>
+            </tbody>
         </table>
+    </div>
     </body>
 
 </html>
